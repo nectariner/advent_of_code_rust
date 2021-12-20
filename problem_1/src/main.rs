@@ -20,7 +20,7 @@ fn part_2(lines: &Vec<u32>) -> u32 {
 
     for num in lines {
         if scans.len() < 3 {
-            scans.push(num.clone());
+            scans.push(*num);
             continue;
         }
 
@@ -31,7 +31,7 @@ fn part_2(lines: &Vec<u32>) -> u32 {
 
         previous_scans_sum = current_scans_sum;
         scans.remove(0);
-        scans.push(num.clone());
+        scans.push(*num);
     }
     increases as u32
 }
